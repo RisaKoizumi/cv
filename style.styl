@@ -1,0 +1,72 @@
+main-background = #fff;
+main-blue = #3d6cb0; 
+little-circles-size = 20px;
+
+makeCircle(diameter, img)
+	width: diameter;
+	height: diameter;
+	border-radius: 50%;
+	background-image: url(img);
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	background-size: little-circles-size auto;
+	&-border
+		width: diameter;
+		height: diameter;
+		border-radius: 50%;
+		border-style: solid;
+		border-width: 1px;
+		border-color: main-blue;
+
+body
+	background-color: main-background;
+	padding: 20px;
+	width: 2300px;
+	height: 3300px;
+
+.col-1
+	float: left;
+	margin-right: 20px;
+	width: 1000px;
+	overflow: hidden;
+
+.col-2
+	// float: right;
+	
+.avatar
+	makeCircle(100px, '');
+	background-color: main-blue;
+	
+.avatar-border
+	padding: 10px;
+	
+.profile-icon
+	makeCircle(little-circles-size, 'img/profile.png');
+	
+.contact-icon
+	makeCircle(little-circles-size, 'img/phone.png');
+	
+.skills-icon
+	makeCircle(little-circles-size, 'img/skills.png');
+
+.education-icon
+	makeCircle(little-circles-size, 'img/education.png');
+	
+.experience-icon
+	makeCircle(little-circles-size, 'img/experience.png');
+	
+.software-icon
+	makeCircle(little-circles-size, 'img/software.png');
+
+.profile-icon-border, .contact-icon-border,
+.skills-icon-border, .education-icon-border,
+.experience-icon-border, .software-icon-border  
+	padding: 2px;
+	
+.profile
+	position: relative;
+	height: 400px;
+	width: 1000px;
+	white-space: pre-wrap;
+	font-family: "Myriad Pro";
+	text-align: justify;
