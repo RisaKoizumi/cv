@@ -1,6 +1,7 @@
 const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
 const config = {
 	context: path.resolve(__dirname, "src"),
 	entry: {
@@ -23,7 +24,7 @@ const config = {
   		open: true,
   		port: 12000,
   		compress: true,
-  		devtool: 'inline-source-map'
+  		//devtool: 'inline-source-map'
   	}, 
   	module: {
   		rules:[{
