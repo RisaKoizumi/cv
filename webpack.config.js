@@ -2,6 +2,7 @@ const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
+
 const config = {
 	context: path.resolve(__dirname, "src"),
 	entry: {
@@ -37,8 +38,14 @@ const config = {
     					presets: ['env'],
   					}
   			}
-  		},
-  		{ test: /\.html$/, use: ['html-loader'] }
+  		}, { 
+  			test: /\.html$/,
+  			use: ['html-loader'],
+  			loaders: ['html-loader', 'pug-html-loader'],
+  		}, {
+  			test: /\.styl$/,
+    		loader: 'stylus-loader'
+  		}
   		],  		
   	},  	
 };
