@@ -41,11 +41,26 @@ const config = {
   		}, { 
   			test: /\.html$/,
   			use: ['html-loader'],
-  			loaders: ['html-loader', 'pug-html-loader'],
-  		}, {
+  			loaders: ['html-loader'],
+  		}, /*{
   			test: /\.styl$/,
     		loader: 'stylus-loader'
-  		}
+  		},*/{
+  			test: /\.(jpe?g|png|gif|svg)$/,
+  			use: [
+    			{
+      				loader: 'file-loader',
+      				options: {
+        				name: './assets/media/[name].[ext]',
+        				outputPath: './assets/media/'
+      				}
+    			}
+  			]
+		}, //file-loader(for fonts)
+			{
+  				test: /\.(woff|woff2|eot|ttf|otf)$/,
+  				use: ['file-loader']
+			}
   		],  		
   	},  	
 };
