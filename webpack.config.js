@@ -2,6 +2,8 @@ const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
+const pug = require('pug');
+process.traceDeprecation = true;
 
 const config = {
 	context: path.resolve(__dirname, "src"),
@@ -16,7 +18,7 @@ const config = {
   	plugins: [
   		new CleanWebpackPlugin(['dist']),
   		new HtmlWebpackPlugin({
-    		template: 'index.html'
+    		template: 'index.pug'
   		}),
 	],
   	devServer: {
@@ -40,27 +42,33 @@ const config = {
   			}
   		}, { 
   			test: /\.html$/,
-  			use: ['html-loader'],
-  			loaders: ['html-loader'],
-  		}, /*{
+  			loader: 'html-loader',
+  		}, {
   			test: /\.styl$/,
     		loader: 'stylus-loader'
-  		},*/{
+  		},{
   			test: /\.(jpe?g|png|gif|svg)$/,
   			use: [
     			{
       				loader: 'file-loader',
       				options: {
-        				name: './assets/media/[name].[ext]',
+        				name: '[name].[ext]',
         				outputPath: './assets/media/'
       				}
     			}
   			]
 		}, //file-loader(for fonts)
-			{
-  				test: /\.(woff|woff2|eot|ttf|otf)$/,
-  				use: ['file-loader']
+		{
+  			test: /\.(woff|woff2|eot|ttf|otf)$/,
+  			use: ['file-loader']
+		},
+		{
+			test: /\.pug$/,
+			loader: 'pug-loader',
+			options: {
+				pretty: true
 			}
+		}
   		],  		
   	},  	
 };
