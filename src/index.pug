@@ -1,3 +1,19 @@
+mixin skillList(id)
+  ul(id=id)
+    li.skilllvl
+    li.skilllvl
+    li.skilllvl
+    li.skilllvl
+    li.skilllvl
+    li.skilllvl
+    li.skilllvl
+    li.skilllvl
+    li.skilllvl
+    li.skilllvl
+    li.skilllvl
+    li.skilllvl
+
+
 doctype html
 html(lang="en")
   head
@@ -35,76 +51,16 @@ html(lang="en")
           div.skills
         h1 SKILLS
         div.scale
-          ul
-            li
-            li
-            li
-            li
-            li
-            li
-            li
-            li
-            li
-            li
-            li
-            li
+          +skillList("skills")
         h2 CREATIVE
         div.scale
-          ul
-            li
-            li
-            li
-            li
-            li
-            li
-            li
-            li
-            li
-            li
-            li
-            li
+          +skillList("creative")
         h2 TEAMWORK
         div.scale
-          ul
-            li
-            li
-            li
-            li
-            li
-            li
-            li
-            li
-            li
-            li
-            li
-            li
+          +skillList("teamwork")
         h2 INNOVATE
         div.scale
-          ul
-            li
-            li
-            li
-            li
-            li
-            li
-            li
-            li
-            li
-            li
-            li
-            li
+          +skillList("innovate")
         h2 COMMUNICATION        
         div.scale
-          ul
-            li
-            li
-            li
-            li
-            li
-            li
-            li
-            li
-            li
-            li
-            li
-            li
+          +skillList("communication")
