@@ -17,8 +17,6 @@ mixin skillList(id)
 doctype html
 html(lang="en")
   head
-    script(type='text/javascript').
-      if (foo) bar(1 + 5)
   body
     div.col-1
       div.avatar-frame
@@ -64,3 +62,8 @@ html(lang="en")
         h2 COMMUNICATION        
         div.scale
           +skillList("communication")
+    div.col-2
+      div.inner-content
+        div.education-frame
+          div.education
+        h1 EDUCATION
